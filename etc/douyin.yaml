@@ -1,0 +1,28 @@
+Name: douyin.rpc
+ListenOn: 0.0.0.0:7001
+
+DatabaseConf:
+  Type: mysql
+  Host: 127.0.0.1
+  Port: 3306
+  DBName: simple_admin
+  Username: # set your username
+  Password: # set your password
+  MaxOpenConn: 100
+  SSLMode: disable
+  CacheTime: 5
+
+RedisConf:
+  Db: 0
+  Host: 127.0.0.1:6379
+  Pass: secret_redis
+
+Log:
+  ServiceName: douyinRpcLogger
+  Mode: file
+  Path: /home/data/logs/douyin/rpc
+  Encoding: json
+  Level: info
+  Compress: false
+  KeepDays: 7
+  StackCoolDownMillis: 100

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package douyin;
+option go_package="./douyin";
+
+// base message
+message Empty {}
+
+message SignatureReq {
+  string url = 1;
+}
+
+
+message SignatureResp {
+  string signature = 1;
+  string client_key = 2;
+}
+
+service Douyin {
+  // group: dyApi
+  // 用于获取JSSDK调起半屏授权页方法需要的签名
+  rpc GetSignature(SignatureReq) returns (SignatureResp);
+}
