@@ -67,7 +67,7 @@ func (oauth *Oauth) GetUserAccessToken(code string) (accessToken credential.Acce
 	}
 
 	if result.Data.ErrCode != 0 {
-		err = fmt.Errorf("GetUserAccessToken error : errcode=%v , errmsg=%v", result.Data.ErrCode, result.Data.ErrMsg)
+		err = util.NewCodeDouYinError("GetUserAccessToken", result.Data.DYError, nil)
 		return
 	}
 

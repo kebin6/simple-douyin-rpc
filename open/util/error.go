@@ -12,6 +12,7 @@ const internalCode = 13
 const abortedCode = 10
 const unavailableCode = 14
 const httpErrorCode = 10000
+const douyinAuthErrorCode = 10100
 
 // CodeError is error with custom error code
 type CodeError struct {
@@ -93,6 +94,10 @@ func NewCodeDouYinError(msg string, dyError DYError, extra *DYErrorExtra) error 
 	}
 	msg = "[" + msg + "] Error : errcode=%d , errmsg=%s"
 	return NewCodeHttpError(msg, dyError.ErrCode, dyError.ErrMsg)
+}
+
+func NewCodeDouYinAuthError() error {
+	return NewCodeError(douyinAuthErrorCode, "user need auth")
 }
 
 func NewDefaultError(msg string, a ...any) error {

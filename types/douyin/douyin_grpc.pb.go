@@ -27,6 +27,9 @@ type DouyinClient interface {
 	// group: dyApi
 	// 用于获取JSSDK调起半屏授权页方法需要的签名
 	GetSignature(ctx context.Context, in *SignatureReq, opts ...grpc.CallOption) (*SignatureResp, error)
+	// group: dyApi
+	// 获取抖音AccessToken
+	GetAccessToken(ctx context.Context, in *AccessTokenReq, opts ...grpc.CallOption) (*AccessTokenResp, error)
 }
 
 type douyinClient struct {
@@ -55,6 +58,15 @@ func (c *douyinClient) GetSignature(ctx context.Context, in *SignatureReq, opts 
 	return out, nil
 }
 
+func (c *douyinClient) GetAccessToken(ctx context.Context, in *AccessTokenReq, opts ...grpc.CallOption) (*AccessTokenResp, error) {
+	out := new(AccessTokenResp)
+	err := c.cc.Invoke(ctx, "/douyin.Douyin/GetAccessToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DouyinServer is the server API for Douyin service.
 // All implementations must embed UnimplementedDouyinServer
 // for forward compatibility
@@ -64,6 +76,9 @@ type DouyinServer interface {
 	// group: dyApi
 	// 用于获取JSSDK调起半屏授权页方法需要的签名
 	GetSignature(context.Context, *SignatureReq) (*SignatureResp, error)
+	// group: dyApi
+	// 获取抖音AccessToken
+	GetAccessToken(context.Context, *AccessTokenReq) (*AccessTokenResp, error)
 	mustEmbedUnimplementedDouyinServer()
 }
 
@@ -76,6 +91,9 @@ func (UnimplementedDouyinServer) InitDatabase(context.Context, *Empty) (*BaseRes
 }
 func (UnimplementedDouyinServer) GetSignature(context.Context, *SignatureReq) (*SignatureResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSignature not implemented")
+}
+func (UnimplementedDouyinServer) GetAccessToken(context.Context, *AccessTokenReq) (*AccessTokenResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAccessToken not implemented")
 }
 func (UnimplementedDouyinServer) mustEmbedUnimplementedDouyinServer() {}
 
@@ -126,6 +144,24 @@ func _Douyin_GetSignature_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Douyin_GetAccessToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AccessTokenReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DouyinServer).GetAccessToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/douyin.Douyin/GetAccessToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DouyinServer).GetAccessToken(ctx, req.(*AccessTokenReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Douyin_ServiceDesc is the grpc.ServiceDesc for Douyin service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -140,6 +176,10 @@ var Douyin_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSignature",
 			Handler:    _Douyin_GetSignature_Handler,
+		},
+		{
+			MethodName: "GetAccessToken",
+			Handler:    _Douyin_GetAccessToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

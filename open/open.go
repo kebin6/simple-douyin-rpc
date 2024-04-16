@@ -4,14 +4,16 @@ import (
 	"github.com/kebin6/simple-douyin-rpc/open/config"
 	"github.com/kebin6/simple-douyin-rpc/open/context"
 	"github.com/kebin6/simple-douyin-rpc/open/credential"
+	"github.com/kebin6/simple-douyin-rpc/open/oauth"
+	"github.com/kebin6/simple-douyin-rpc/open/user"
 )
 
-//API 抖音开放平台API
+// API 抖音开放平台API
 type API struct {
 	ctx *context.Context
 }
 
-//NewOpenAPI 实例抖音开放平台API
+// NewOpenAPI 实例抖音开放平台API
 func NewOpenAPI(cfg *config.Config) *API {
 	defaultAkHandle := credential.NewDefaultAccessToken(cfg.ClientKey, cfg.ClientSecret, credential.CacheKeyPrefix, cfg.Cache)
 	ctx := &context.Context{
@@ -45,11 +47,11 @@ func (api *API) GetClientToken() (string, error) {
 	return clientToken.AccessToken, nil
 }
 
-//// GetOauth oauth2网页授权
-//func (api *API) GetOauth() *oauth.Oauth {
-//	return oauth.NewOauth(api.ctx)
-//}
-//
+// GetOauth oauth2网页授权
+func (api *API) GetOauth() *oauth.Oauth {
+	return oauth.NewOauth(api.ctx)
+}
+
 //// GetVideo 视频管理接口
 //func (api *API) GetVideo() *video.Video {
 //	return video.NewVideo(api.ctx)
@@ -59,12 +61,12 @@ func (api *API) GetClientToken() (string, error) {
 //func (api *API) GetImage() *image.Image {
 //	return image.NewImage(api.ctx)
 //}
-//
-//// GetUser 用户管理接口
-//func (api *API) GetUser() *user.User {
-//	return user.NewUser(api.ctx)
-//}
-//
+
+// GetUser 用户管理接口
+func (api *API) GetUser() *user.User {
+	return user.NewUser(api.ctx)
+}
+
 //// GetPoi 生活服务管理接口
 //func (api *API) GetPoi() *poi.Poi {
 //	return poi.NewPoi(api.ctx)

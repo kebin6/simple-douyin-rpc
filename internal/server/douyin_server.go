@@ -32,3 +32,8 @@ func (s *DouyinServer) GetSignature(ctx context.Context, in *douyin.SignatureReq
 	l := dyApi.NewGetSignatureLogic(ctx, s.svcCtx)
 	return l.GetSignature(in)
 }
+
+func (s *DouyinServer) GetAccessToken(ctx context.Context, in *douyin.AccessTokenReq) (*douyin.AccessTokenResp, error) {
+	l := dyApi.NewGetAccessTokenLogic(ctx, s.svcCtx)
+	return l.GetAccessToken(in)
+}

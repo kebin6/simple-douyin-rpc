@@ -13,6 +13,8 @@ import (
 )
 
 type (
+	AccessTokenReq   = douyin.AccessTokenReq
+	AccessTokenResp  = douyin.AccessTokenResp
 	BaseIDInt32Resp  = douyin.BaseIDInt32Resp
 	BaseIDInt64Resp  = douyin.BaseIDInt64Resp
 	BaseIDResp       = douyin.BaseIDResp
@@ -37,6 +39,7 @@ type (
 	Douyin interface {
 		InitDatabase(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*BaseResp, error)
 		GetSignature(ctx context.Context, in *SignatureReq, opts ...grpc.CallOption) (*SignatureResp, error)
+		GetAccessToken(ctx context.Context, in *AccessTokenReq, opts ...grpc.CallOption) (*AccessTokenResp, error)
 	}
 
 	defaultDouyin struct {
@@ -58,4 +61,9 @@ func (m *defaultDouyin) InitDatabase(ctx context.Context, in *Empty, opts ...grp
 func (m *defaultDouyin) GetSignature(ctx context.Context, in *SignatureReq, opts ...grpc.CallOption) (*SignatureResp, error) {
 	client := douyin.NewDouyinClient(m.cli.Conn())
 	return client.GetSignature(ctx, in, opts...)
+}
+
+func (m *defaultDouyin) GetAccessToken(ctx context.Context, in *AccessTokenReq, opts ...grpc.CallOption) (*AccessTokenResp, error) {
+	client := douyin.NewDouyinClient(m.cli.Conn())
+	return client.GetAccessToken(ctx, in, opts...)
 }

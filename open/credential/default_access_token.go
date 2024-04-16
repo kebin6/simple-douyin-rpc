@@ -70,7 +70,7 @@ func (ak *DefaultAccessToken) GetAccessToken(openID string) (accessToken string,
 	refreshTokenCacheKey := fmt.Sprintf("%s_refresh_token_%s", ak.cacheKeyPrefix, openID)
 	refreshToken := ak.cache.Get(refreshTokenCacheKey)
 	if refreshToken == nil {
-		err = util.NewCodeUnavailableError("user need auth")
+		err = util.NewCodeDouYinAuthError()
 		return
 	}
 
@@ -134,7 +134,7 @@ func (ak *DefaultAccessToken) RefreshAccessToken(refreshToken string) (accessTok
 	}
 
 	if result.Data.ErrCode != 0 {
-		err = fmt.Errorf("GetUserAccessToken error : errcode=%v , errmsg=%v", result.Data.ErrCode, result.Data.ErrMsg)
+		err = util.NewCodeDouYinError("RefreshAccessToken", result.Data.DYError, nil)
 		return
 	}
 
