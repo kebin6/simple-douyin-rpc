@@ -33,7 +33,17 @@ func (s *DouyinServer) GetSignature(ctx context.Context, in *douyin.SignatureReq
 	return l.GetSignature(in)
 }
 
+func (s *DouyinServer) GetShareSchema(ctx context.Context, in *douyin.GetShareSchemaReq) (*douyin.GetShareSchemaResp, error) {
+	l := dyApi.NewGetShareSchemaLogic(ctx, s.svcCtx)
+	return l.GetShareSchema(in)
+}
+
 func (s *DouyinServer) GetAccessToken(ctx context.Context, in *douyin.AccessTokenReq) (*douyin.AccessTokenResp, error) {
 	l := dyApi.NewGetAccessTokenLogic(ctx, s.svcCtx)
 	return l.GetAccessToken(in)
+}
+
+func (s *DouyinServer) GetUserInfo(ctx context.Context, in *douyin.UserInfoReq) (*douyin.UserInfoResp, error) {
+	l := dyApi.NewGetUserInfoLogic(ctx, s.svcCtx)
+	return l.GetUserInfo(in)
 }

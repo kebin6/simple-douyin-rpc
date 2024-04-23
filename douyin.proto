@@ -3,37 +3,13 @@ syntax = "proto3";
 package douyin;
 option go_package="./douyin";
 
-message BaseIDUint32Resp {
-  uint32 id = 1;
-  string msg = 2;
-}
-
-message BaseUUIDResp {
-  string id = 1;
-  string msg = 2;
-}
-
-message SignatureResp {
-  string signature = 1;
-  string client_key = 2;
-}
-
-message IDReq {
-  uint64 id = 1;
-}
-
-message BaseIDInt32Resp {
-  int32 id = 1;
-  string msg = 2;
-}
-
-message BaseIDInt64Resp {
-  int64 id = 1;
-  string msg = 2;
-}
-
 message UUIDReq {
   string id = 1;
+}
+
+message PageInfoReq {
+  uint64 page = 1;
+  uint64 page_size = 2;
 }
 
 message IDsReq {
@@ -44,17 +20,111 @@ message IDsInt32Req {
   repeated int32 ids = 1;
 }
 
+message BaseIDInt64Resp {
+  int64 id = 1;
+  string msg = 2;
+}
+
+message BaseIDInt32Resp {
+  int32 id = 1;
+  string msg = 2;
+}
+
+message UserInfoReq {
+  string openid = 1;
+}
+
+message IDUint32Req {
+  uint32 id = 1;
+}
+
+message BaseIDUint32Resp {
+  uint32 id = 1;
+  string msg = 2;
+}
+
+message BaseResp {
+  string msg = 1;
+}
+
+//  base message
+message Empty {}
+
+message IDInt32Req {
+  int32 id = 1;
+}
+
+message BaseUUIDResp {
+  string id = 1;
+  string msg = 2;
+}
+
+message GetShareSchemaReq {
+  string state = 6;
+  string image_path = 7;
+  string image_list_path = 8;
+  string video_path = 9;
+  string hashtag_list = 10;
+  string micro_app_info = 11;
+  string share_to_publish = 12;
+  string title = 13;
+  string poi_id = 14;
+}
+
+message AccessTokenReq {
+  string code = 1;
+}
+
+message UserInfo {
+  string avatar = 1;
+  string city = 2;
+  string country = 3;
+  string e_account_role = 4;
+  string gender = 5;
+  string nickname = 6;
+  string open_id = 7;
+  string province = 8;
+  string union_id = 9;
+}
+
+message UserInfoResp {
+  UserInfo user_info = 1;
+}
+
+message BaseIDResp {
+  uint64 id = 1;
+  string msg = 2;
+}
+
+message IDsUint32Req {
+  repeated uint32 ids = 1;
+}
+
+message IDInt64Req {
+  int64 id = 1;
+}
+
 message IDsInt64Req {
   repeated int64 ids = 1;
+}
+
+message SignatureResp {
+  string signature = 1;
+  string client_key = 2;
+  string nonce_str = 3;
+  int64 timestamp = 4;
+}
+
+message IDReq {
+  uint64 id = 1;
 }
 
 message UUIDsReq {
   repeated string ids = 1;
 }
 
-message PageInfoReq {
-  uint64 page = 1;
-  uint64 page_size = 2;
+message GetShareSchemaResp {
+  string schema = 1;
 }
 
 message SignatureReq {
@@ -65,38 +135,6 @@ message AccessTokenResp {
   string access_token = 1;
 }
 
-message IDInt32Req {
-  int32 id = 1;
-}
-
-message IDInt64Req {
-  int64 id = 1;
-}
-
-message IDUint32Req {
-  uint32 id = 1;
-}
-
-message IDsUint32Req {
-  repeated uint32 ids = 1;
-}
-
-message BaseResp {
-  string msg = 1;
-}
-
-message AccessTokenReq {
-  string code = 1;
-}
-
-//  base message
-message Empty {}
-
-message BaseIDResp {
-  uint64 id = 1;
-  string msg = 2;
-}
-
 service Douyin {
   //  group: base
   rpc initDatabase(Empty) returns (BaseResp);
@@ -104,7 +142,13 @@ service Douyin {
   //  用于获取JSSDK调起半屏授权页方法需要的签名
   rpc GetSignature(SignatureReq) returns (SignatureResp);
   //  group: dyApi
+  //  用于获取 分享Schema
+  rpc GetShareSchema(GetShareSchemaReq) returns (GetShareSchemaResp);
+  //  group: dyApi
   //  获取抖音AccessToken
   rpc GetAccessToken(AccessTokenReq) returns (AccessTokenResp);
+  //  group: dyApi
+  //  获取抖音用户信息
+  rpc GetUserInfo(UserInfoReq) returns (UserInfoResp);
 }
 

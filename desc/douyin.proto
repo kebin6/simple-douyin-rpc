@@ -10,10 +10,27 @@ message SignatureReq {
   string url = 1;
 }
 
-
 message SignatureResp {
   string signature = 1;
   string client_key = 2;
+  string nonce_str = 3;
+  int64 timestamp = 4;
+}
+
+message GetShareSchemaReq {
+  string state = 6;
+  string image_path = 7;
+  string image_list_path = 8;
+  string video_path = 9;
+  string hashtag_list = 10;
+  string micro_app_info = 11;
+  string share_to_publish = 12;
+  string title = 13;
+  string poi_id = 14;
+}
+
+message GetShareSchemaResp {
+  string schema = 1;
 }
 
 message AccessTokenReq {
@@ -48,6 +65,10 @@ service Douyin {
   // group: dyApi
   // 用于获取JSSDK调起半屏授权页方法需要的签名
   rpc GetSignature(SignatureReq) returns (SignatureResp);
+
+  // group: dyApi
+  // 用于获取 分享Schema
+  rpc GetShareSchema(GetShareSchemaReq) returns (GetShareSchemaResp);
 
   // group: dyApi
   // 获取抖音AccessToken

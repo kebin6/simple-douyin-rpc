@@ -20,328 +20,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type BaseIDUint32Resp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id  uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
-}
-
-func (x *BaseIDUint32Resp) Reset() {
-	*x = BaseIDUint32Resp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *BaseIDUint32Resp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BaseIDUint32Resp) ProtoMessage() {}
-
-func (x *BaseIDUint32Resp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BaseIDUint32Resp.ProtoReflect.Descriptor instead.
-func (*BaseIDUint32Resp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *BaseIDUint32Resp) GetId() uint32 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-func (x *BaseIDUint32Resp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
-type BaseUUIDResp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id  string `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
-	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
-}
-
-func (x *BaseUUIDResp) Reset() {
-	*x = BaseUUIDResp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *BaseUUIDResp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BaseUUIDResp) ProtoMessage() {}
-
-func (x *BaseUUIDResp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BaseUUIDResp.ProtoReflect.Descriptor instead.
-func (*BaseUUIDResp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *BaseUUIDResp) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *BaseUUIDResp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
-type SignatureResp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Signature string `protobuf:"bytes,1,opt,name=signature,proto3" json:"signature"`
-	ClientKey string `protobuf:"bytes,2,opt,name=client_key,json=clientKey,proto3" json:"client_key"`
-}
-
-func (x *SignatureResp) Reset() {
-	*x = SignatureResp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *SignatureResp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SignatureResp) ProtoMessage() {}
-
-func (x *SignatureResp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SignatureResp.ProtoReflect.Descriptor instead.
-func (*SignatureResp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *SignatureResp) GetSignature() string {
-	if x != nil {
-		return x.Signature
-	}
-	return ""
-}
-
-func (x *SignatureResp) GetClientKey() string {
-	if x != nil {
-		return x.ClientKey
-	}
-	return ""
-}
-
-type IDReq struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-}
-
-func (x *IDReq) Reset() {
-	*x = IDReq{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *IDReq) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*IDReq) ProtoMessage() {}
-
-func (x *IDReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use IDReq.ProtoReflect.Descriptor instead.
-func (*IDReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *IDReq) GetId() uint64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-type BaseIDInt32Resp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id  int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
-}
-
-func (x *BaseIDInt32Resp) Reset() {
-	*x = BaseIDInt32Resp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *BaseIDInt32Resp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BaseIDInt32Resp) ProtoMessage() {}
-
-func (x *BaseIDInt32Resp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BaseIDInt32Resp.ProtoReflect.Descriptor instead.
-func (*BaseIDInt32Resp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *BaseIDInt32Resp) GetId() int32 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-func (x *BaseIDInt32Resp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
-type BaseIDInt64Resp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id  int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
-}
-
-func (x *BaseIDInt64Resp) Reset() {
-	*x = BaseIDInt64Resp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *BaseIDInt64Resp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BaseIDInt64Resp) ProtoMessage() {}
-
-func (x *BaseIDInt64Resp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BaseIDInt64Resp.ProtoReflect.Descriptor instead.
-func (*BaseIDInt64Resp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *BaseIDInt64Resp) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-func (x *BaseIDInt64Resp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
 type UUIDReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -353,7 +31,7 @@ type UUIDReq struct {
 func (x *UUIDReq) Reset() {
 	*x = UUIDReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[6]
+		mi := &file_douyin_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -366,7 +44,7 @@ func (x *UUIDReq) String() string {
 func (*UUIDReq) ProtoMessage() {}
 
 func (x *UUIDReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[6]
+	mi := &file_douyin_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +57,7 @@ func (x *UUIDReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UUIDReq.ProtoReflect.Descriptor instead.
 func (*UUIDReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{6}
+	return file_douyin_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *UUIDReq) GetId() string {
@@ -387,6 +65,61 @@ func (x *UUIDReq) GetId() string {
 		return x.Id
 	}
 	return ""
+}
+
+type PageInfoReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Page     uint64 `protobuf:"varint,1,opt,name=page,proto3" json:"page"`
+	PageSize uint64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size"`
+}
+
+func (x *PageInfoReq) Reset() {
+	*x = PageInfoReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PageInfoReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PageInfoReq) ProtoMessage() {}
+
+func (x *PageInfoReq) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PageInfoReq.ProtoReflect.Descriptor instead.
+func (*PageInfoReq) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PageInfoReq) GetPage() uint64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *PageInfoReq) GetPageSize() uint64 {
+	if x != nil {
+		return x.PageSize
+	}
+	return 0
 }
 
 type IDsReq struct {
@@ -400,7 +133,7 @@ type IDsReq struct {
 func (x *IDsReq) Reset() {
 	*x = IDsReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[7]
+		mi := &file_douyin_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -413,7 +146,7 @@ func (x *IDsReq) String() string {
 func (*IDsReq) ProtoMessage() {}
 
 func (x *IDsReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[7]
+	mi := &file_douyin_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -426,7 +159,7 @@ func (x *IDsReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IDsReq.ProtoReflect.Descriptor instead.
 func (*IDsReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{7}
+	return file_douyin_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *IDsReq) GetIds() []uint64 {
@@ -447,7 +180,7 @@ type IDsInt32Req struct {
 func (x *IDsInt32Req) Reset() {
 	*x = IDsInt32Req{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[8]
+		mi := &file_douyin_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -460,7 +193,7 @@ func (x *IDsInt32Req) String() string {
 func (*IDsInt32Req) ProtoMessage() {}
 
 func (x *IDsInt32Req) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[8]
+	mi := &file_douyin_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -473,7 +206,7 @@ func (x *IDsInt32Req) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IDsInt32Req.ProtoReflect.Descriptor instead.
 func (*IDsInt32Req) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{8}
+	return file_douyin_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *IDsInt32Req) GetIds() []int32 {
@@ -481,6 +214,918 @@ func (x *IDsInt32Req) GetIds() []int32 {
 		return x.Ids
 	}
 	return nil
+}
+
+type BaseIDInt64Resp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id  int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
+}
+
+func (x *BaseIDInt64Resp) Reset() {
+	*x = BaseIDInt64Resp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BaseIDInt64Resp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BaseIDInt64Resp) ProtoMessage() {}
+
+func (x *BaseIDInt64Resp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BaseIDInt64Resp.ProtoReflect.Descriptor instead.
+func (*BaseIDInt64Resp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *BaseIDInt64Resp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *BaseIDInt64Resp) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+type BaseIDInt32Resp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id  int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
+}
+
+func (x *BaseIDInt32Resp) Reset() {
+	*x = BaseIDInt32Resp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BaseIDInt32Resp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BaseIDInt32Resp) ProtoMessage() {}
+
+func (x *BaseIDInt32Resp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BaseIDInt32Resp.ProtoReflect.Descriptor instead.
+func (*BaseIDInt32Resp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *BaseIDInt32Resp) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *BaseIDInt32Resp) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+type UserInfoReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Openid string `protobuf:"bytes,1,opt,name=openid,proto3" json:"openid"`
+}
+
+func (x *UserInfoReq) Reset() {
+	*x = UserInfoReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserInfoReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserInfoReq) ProtoMessage() {}
+
+func (x *UserInfoReq) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserInfoReq.ProtoReflect.Descriptor instead.
+func (*UserInfoReq) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *UserInfoReq) GetOpenid() string {
+	if x != nil {
+		return x.Openid
+	}
+	return ""
+}
+
+type IDUint32Req struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+}
+
+func (x *IDUint32Req) Reset() {
+	*x = IDUint32Req{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDUint32Req) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDUint32Req) ProtoMessage() {}
+
+func (x *IDUint32Req) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDUint32Req.ProtoReflect.Descriptor instead.
+func (*IDUint32Req) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *IDUint32Req) GetId() uint32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type BaseIDUint32Resp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id  uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
+}
+
+func (x *BaseIDUint32Resp) Reset() {
+	*x = BaseIDUint32Resp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BaseIDUint32Resp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BaseIDUint32Resp) ProtoMessage() {}
+
+func (x *BaseIDUint32Resp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BaseIDUint32Resp.ProtoReflect.Descriptor instead.
+func (*BaseIDUint32Resp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *BaseIDUint32Resp) GetId() uint32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *BaseIDUint32Resp) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+type BaseResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Msg string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg"`
+}
+
+func (x *BaseResp) Reset() {
+	*x = BaseResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BaseResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BaseResp) ProtoMessage() {}
+
+func (x *BaseResp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BaseResp.ProtoReflect.Descriptor instead.
+func (*BaseResp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *BaseResp) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+// base message
+type Empty struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *Empty) Reset() {
+	*x = Empty{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Empty) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Empty) ProtoMessage() {}
+
+func (x *Empty) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Empty.ProtoReflect.Descriptor instead.
+func (*Empty) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{10}
+}
+
+type IDInt32Req struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+}
+
+func (x *IDInt32Req) Reset() {
+	*x = IDInt32Req{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDInt32Req) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDInt32Req) ProtoMessage() {}
+
+func (x *IDInt32Req) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDInt32Req.ProtoReflect.Descriptor instead.
+func (*IDInt32Req) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *IDInt32Req) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type BaseUUIDResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id  string `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
+}
+
+func (x *BaseUUIDResp) Reset() {
+	*x = BaseUUIDResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BaseUUIDResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BaseUUIDResp) ProtoMessage() {}
+
+func (x *BaseUUIDResp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BaseUUIDResp.ProtoReflect.Descriptor instead.
+func (*BaseUUIDResp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *BaseUUIDResp) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *BaseUUIDResp) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+type GetShareSchemaReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	State          string `protobuf:"bytes,6,opt,name=state,proto3" json:"state"`
+	ImagePath      string `protobuf:"bytes,7,opt,name=image_path,json=imagePath,proto3" json:"image_path"`
+	ImageListPath  string `protobuf:"bytes,8,opt,name=image_list_path,json=imageListPath,proto3" json:"image_list_path"`
+	VideoPath      string `protobuf:"bytes,9,opt,name=video_path,json=videoPath,proto3" json:"video_path"`
+	HashtagList    string `protobuf:"bytes,10,opt,name=hashtag_list,json=hashtagList,proto3" json:"hashtag_list"`
+	MicroAppInfo   string `protobuf:"bytes,11,opt,name=micro_app_info,json=microAppInfo,proto3" json:"micro_app_info"`
+	ShareToPublish string `protobuf:"bytes,12,opt,name=share_to_publish,json=shareToPublish,proto3" json:"share_to_publish"`
+	Title          string `protobuf:"bytes,13,opt,name=title,proto3" json:"title"`
+	PoiId          string `protobuf:"bytes,14,opt,name=poi_id,json=poiId,proto3" json:"poi_id"`
+}
+
+func (x *GetShareSchemaReq) Reset() {
+	*x = GetShareSchemaReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetShareSchemaReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetShareSchemaReq) ProtoMessage() {}
+
+func (x *GetShareSchemaReq) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetShareSchemaReq.ProtoReflect.Descriptor instead.
+func (*GetShareSchemaReq) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *GetShareSchemaReq) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetImagePath() string {
+	if x != nil {
+		return x.ImagePath
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetImageListPath() string {
+	if x != nil {
+		return x.ImageListPath
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetVideoPath() string {
+	if x != nil {
+		return x.VideoPath
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetHashtagList() string {
+	if x != nil {
+		return x.HashtagList
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetMicroAppInfo() string {
+	if x != nil {
+		return x.MicroAppInfo
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetShareToPublish() string {
+	if x != nil {
+		return x.ShareToPublish
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *GetShareSchemaReq) GetPoiId() string {
+	if x != nil {
+		return x.PoiId
+	}
+	return ""
+}
+
+type AccessTokenReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code"`
+}
+
+func (x *AccessTokenReq) Reset() {
+	*x = AccessTokenReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AccessTokenReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AccessTokenReq) ProtoMessage() {}
+
+func (x *AccessTokenReq) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AccessTokenReq.ProtoReflect.Descriptor instead.
+func (*AccessTokenReq) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *AccessTokenReq) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+type UserInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Avatar       string `protobuf:"bytes,1,opt,name=avatar,proto3" json:"avatar"`
+	City         string `protobuf:"bytes,2,opt,name=city,proto3" json:"city"`
+	Country      string `protobuf:"bytes,3,opt,name=country,proto3" json:"country"`
+	EAccountRole string `protobuf:"bytes,4,opt,name=e_account_role,json=eAccountRole,proto3" json:"e_account_role"`
+	Gender       string `protobuf:"bytes,5,opt,name=gender,proto3" json:"gender"`
+	Nickname     string `protobuf:"bytes,6,opt,name=nickname,proto3" json:"nickname"`
+	OpenId       string `protobuf:"bytes,7,opt,name=open_id,json=openId,proto3" json:"open_id"`
+	Province     string `protobuf:"bytes,8,opt,name=province,proto3" json:"province"`
+	UnionId      string `protobuf:"bytes,9,opt,name=union_id,json=unionId,proto3" json:"union_id"`
+}
+
+func (x *UserInfo) Reset() {
+	*x = UserInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserInfo) ProtoMessage() {}
+
+func (x *UserInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserInfo.ProtoReflect.Descriptor instead.
+func (*UserInfo) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *UserInfo) GetAvatar() string {
+	if x != nil {
+		return x.Avatar
+	}
+	return ""
+}
+
+func (x *UserInfo) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *UserInfo) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *UserInfo) GetEAccountRole() string {
+	if x != nil {
+		return x.EAccountRole
+	}
+	return ""
+}
+
+func (x *UserInfo) GetGender() string {
+	if x != nil {
+		return x.Gender
+	}
+	return ""
+}
+
+func (x *UserInfo) GetNickname() string {
+	if x != nil {
+		return x.Nickname
+	}
+	return ""
+}
+
+func (x *UserInfo) GetOpenId() string {
+	if x != nil {
+		return x.OpenId
+	}
+	return ""
+}
+
+func (x *UserInfo) GetProvince() string {
+	if x != nil {
+		return x.Province
+	}
+	return ""
+}
+
+func (x *UserInfo) GetUnionId() string {
+	if x != nil {
+		return x.UnionId
+	}
+	return ""
+}
+
+type UserInfoResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserInfo *UserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info"`
+}
+
+func (x *UserInfoResp) Reset() {
+	*x = UserInfoResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserInfoResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserInfoResp) ProtoMessage() {}
+
+func (x *UserInfoResp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserInfoResp.ProtoReflect.Descriptor instead.
+func (*UserInfoResp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *UserInfoResp) GetUserInfo() *UserInfo {
+	if x != nil {
+		return x.UserInfo
+	}
+	return nil
+}
+
+type BaseIDResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id  uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
+}
+
+func (x *BaseIDResp) Reset() {
+	*x = BaseIDResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BaseIDResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BaseIDResp) ProtoMessage() {}
+
+func (x *BaseIDResp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BaseIDResp.ProtoReflect.Descriptor instead.
+func (*BaseIDResp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *BaseIDResp) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *BaseIDResp) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+type IDsUint32Req struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Ids []uint32 `protobuf:"varint,1,rep,packed,name=ids,proto3" json:"ids"`
+}
+
+func (x *IDsUint32Req) Reset() {
+	*x = IDsUint32Req{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDsUint32Req) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDsUint32Req) ProtoMessage() {}
+
+func (x *IDsUint32Req) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDsUint32Req.ProtoReflect.Descriptor instead.
+func (*IDsUint32Req) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *IDsUint32Req) GetIds() []uint32 {
+	if x != nil {
+		return x.Ids
+	}
+	return nil
+}
+
+type IDInt64Req struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+}
+
+func (x *IDInt64Req) Reset() {
+	*x = IDInt64Req{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDInt64Req) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDInt64Req) ProtoMessage() {}
+
+func (x *IDInt64Req) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDInt64Req.ProtoReflect.Descriptor instead.
+func (*IDInt64Req) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *IDInt64Req) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
 }
 
 type IDsInt64Req struct {
@@ -494,7 +1139,7 @@ type IDsInt64Req struct {
 func (x *IDsInt64Req) Reset() {
 	*x = IDsInt64Req{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[9]
+		mi := &file_douyin_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -507,7 +1152,7 @@ func (x *IDsInt64Req) String() string {
 func (*IDsInt64Req) ProtoMessage() {}
 
 func (x *IDsInt64Req) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[9]
+	mi := &file_douyin_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -520,7 +1165,7 @@ func (x *IDsInt64Req) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IDsInt64Req.ProtoReflect.Descriptor instead.
 func (*IDsInt64Req) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{9}
+	return file_douyin_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *IDsInt64Req) GetIds() []int64 {
@@ -528,6 +1173,124 @@ func (x *IDsInt64Req) GetIds() []int64 {
 		return x.Ids
 	}
 	return nil
+}
+
+type SignatureResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Signature string `protobuf:"bytes,1,opt,name=signature,proto3" json:"signature"`
+	ClientKey string `protobuf:"bytes,2,opt,name=client_key,json=clientKey,proto3" json:"client_key"`
+	NonceStr  string `protobuf:"bytes,3,opt,name=nonce_str,json=nonceStr,proto3" json:"nonce_str"`
+	Timestamp int64  `protobuf:"varint,4,opt,name=timestamp,proto3" json:"timestamp"`
+}
+
+func (x *SignatureResp) Reset() {
+	*x = SignatureResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SignatureResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SignatureResp) ProtoMessage() {}
+
+func (x *SignatureResp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SignatureResp.ProtoReflect.Descriptor instead.
+func (*SignatureResp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *SignatureResp) GetSignature() string {
+	if x != nil {
+		return x.Signature
+	}
+	return ""
+}
+
+func (x *SignatureResp) GetClientKey() string {
+	if x != nil {
+		return x.ClientKey
+	}
+	return ""
+}
+
+func (x *SignatureResp) GetNonceStr() string {
+	if x != nil {
+		return x.NonceStr
+	}
+	return ""
+}
+
+func (x *SignatureResp) GetTimestamp() int64 {
+	if x != nil {
+		return x.Timestamp
+	}
+	return 0
+}
+
+type IDReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
+}
+
+func (x *IDReq) Reset() {
+	*x = IDReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_douyin_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDReq) ProtoMessage() {}
+
+func (x *IDReq) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDReq.ProtoReflect.Descriptor instead.
+func (*IDReq) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *IDReq) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
 }
 
 type UUIDsReq struct {
@@ -541,7 +1304,7 @@ type UUIDsReq struct {
 func (x *UUIDsReq) Reset() {
 	*x = UUIDsReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[10]
+		mi := &file_douyin_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -554,7 +1317,7 @@ func (x *UUIDsReq) String() string {
 func (*UUIDsReq) ProtoMessage() {}
 
 func (x *UUIDsReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[10]
+	mi := &file_douyin_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -567,7 +1330,7 @@ func (x *UUIDsReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UUIDsReq.ProtoReflect.Descriptor instead.
 func (*UUIDsReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{10}
+	return file_douyin_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *UUIDsReq) GetIds() []string {
@@ -577,32 +1340,31 @@ func (x *UUIDsReq) GetIds() []string {
 	return nil
 }
 
-type PageInfoReq struct {
+type GetShareSchemaResp struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Page     uint64 `protobuf:"varint,1,opt,name=page,proto3" json:"page"`
-	PageSize uint64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size"`
+	Schema string `protobuf:"bytes,1,opt,name=schema,proto3" json:"schema"`
 }
 
-func (x *PageInfoReq) Reset() {
-	*x = PageInfoReq{}
+func (x *GetShareSchemaResp) Reset() {
+	*x = GetShareSchemaResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[11]
+		mi := &file_douyin_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *PageInfoReq) String() string {
+func (x *GetShareSchemaResp) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*PageInfoReq) ProtoMessage() {}
+func (*GetShareSchemaResp) ProtoMessage() {}
 
-func (x *PageInfoReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[11]
+func (x *GetShareSchemaResp) ProtoReflect() protoreflect.Message {
+	mi := &file_douyin_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -613,23 +1375,16 @@ func (x *PageInfoReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PageInfoReq.ProtoReflect.Descriptor instead.
-func (*PageInfoReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{11}
+// Deprecated: Use GetShareSchemaResp.ProtoReflect.Descriptor instead.
+func (*GetShareSchemaResp) Descriptor() ([]byte, []int) {
+	return file_douyin_proto_rawDescGZIP(), []int{24}
 }
 
-func (x *PageInfoReq) GetPage() uint64 {
+func (x *GetShareSchemaResp) GetSchema() string {
 	if x != nil {
-		return x.Page
+		return x.Schema
 	}
-	return 0
-}
-
-func (x *PageInfoReq) GetPageSize() uint64 {
-	if x != nil {
-		return x.PageSize
-	}
-	return 0
+	return ""
 }
 
 type SignatureReq struct {
@@ -643,7 +1398,7 @@ type SignatureReq struct {
 func (x *SignatureReq) Reset() {
 	*x = SignatureReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[12]
+		mi := &file_douyin_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -656,7 +1411,7 @@ func (x *SignatureReq) String() string {
 func (*SignatureReq) ProtoMessage() {}
 
 func (x *SignatureReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[12]
+	mi := &file_douyin_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -669,7 +1424,7 @@ func (x *SignatureReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignatureReq.ProtoReflect.Descriptor instead.
 func (*SignatureReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{12}
+	return file_douyin_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *SignatureReq) GetUrl() string {
@@ -690,7 +1445,7 @@ type AccessTokenResp struct {
 func (x *AccessTokenResp) Reset() {
 	*x = AccessTokenResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[13]
+		mi := &file_douyin_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -703,7 +1458,7 @@ func (x *AccessTokenResp) String() string {
 func (*AccessTokenResp) ProtoMessage() {}
 
 func (x *AccessTokenResp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[13]
+	mi := &file_douyin_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -716,7 +1471,7 @@ func (x *AccessTokenResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccessTokenResp.ProtoReflect.Descriptor instead.
 func (*AccessTokenResp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{13}
+	return file_douyin_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *AccessTokenResp) GetAccessToken() string {
@@ -726,454 +1481,134 @@ func (x *AccessTokenResp) GetAccessToken() string {
 	return ""
 }
 
-type IDInt32Req struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-}
-
-func (x *IDInt32Req) Reset() {
-	*x = IDInt32Req{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *IDInt32Req) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*IDInt32Req) ProtoMessage() {}
-
-func (x *IDInt32Req) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use IDInt32Req.ProtoReflect.Descriptor instead.
-func (*IDInt32Req) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *IDInt32Req) GetId() int32 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-type IDInt64Req struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-}
-
-func (x *IDInt64Req) Reset() {
-	*x = IDInt64Req{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *IDInt64Req) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*IDInt64Req) ProtoMessage() {}
-
-func (x *IDInt64Req) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use IDInt64Req.ProtoReflect.Descriptor instead.
-func (*IDInt64Req) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *IDInt64Req) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-type IDUint32Req struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-}
-
-func (x *IDUint32Req) Reset() {
-	*x = IDUint32Req{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *IDUint32Req) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*IDUint32Req) ProtoMessage() {}
-
-func (x *IDUint32Req) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use IDUint32Req.ProtoReflect.Descriptor instead.
-func (*IDUint32Req) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *IDUint32Req) GetId() uint32 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-type IDsUint32Req struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Ids []uint32 `protobuf:"varint,1,rep,packed,name=ids,proto3" json:"ids"`
-}
-
-func (x *IDsUint32Req) Reset() {
-	*x = IDsUint32Req{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *IDsUint32Req) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*IDsUint32Req) ProtoMessage() {}
-
-func (x *IDsUint32Req) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use IDsUint32Req.ProtoReflect.Descriptor instead.
-func (*IDsUint32Req) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *IDsUint32Req) GetIds() []uint32 {
-	if x != nil {
-		return x.Ids
-	}
-	return nil
-}
-
-type BaseResp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Msg string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg"`
-}
-
-func (x *BaseResp) Reset() {
-	*x = BaseResp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[18]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *BaseResp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BaseResp) ProtoMessage() {}
-
-func (x *BaseResp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[18]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BaseResp.ProtoReflect.Descriptor instead.
-func (*BaseResp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{18}
-}
-
-func (x *BaseResp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
-type AccessTokenReq struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code"`
-}
-
-func (x *AccessTokenReq) Reset() {
-	*x = AccessTokenReq{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *AccessTokenReq) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AccessTokenReq) ProtoMessage() {}
-
-func (x *AccessTokenReq) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AccessTokenReq.ProtoReflect.Descriptor instead.
-func (*AccessTokenReq) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{19}
-}
-
-func (x *AccessTokenReq) GetCode() string {
-	if x != nil {
-		return x.Code
-	}
-	return ""
-}
-
-// base message
-type Empty struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *Empty) Reset() {
-	*x = Empty{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *Empty) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Empty) ProtoMessage() {}
-
-func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Empty.ProtoReflect.Descriptor instead.
-func (*Empty) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{20}
-}
-
-type BaseIDResp struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id  uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"`
-	Msg string `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
-}
-
-func (x *BaseIDResp) Reset() {
-	*x = BaseIDResp{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_douyin_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *BaseIDResp) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BaseIDResp) ProtoMessage() {}
-
-func (x *BaseIDResp) ProtoReflect() protoreflect.Message {
-	mi := &file_douyin_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BaseIDResp.ProtoReflect.Descriptor instead.
-func (*BaseIDResp) Descriptor() ([]byte, []int) {
-	return file_douyin_proto_rawDescGZIP(), []int{21}
-}
-
-func (x *BaseIDResp) GetId() uint64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-func (x *BaseIDResp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
 var File_douyin_proto protoreflect.FileDescriptor
 
 var file_douyin_proto_rawDesc = []byte{
 	0x0a, 0x0c, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x06,
-	0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x22, 0x34, 0x0a, 0x10, 0x42, 0x61, 0x73, 0x65, 0x49, 0x44,
-	0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73,
-	0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x30, 0x0a, 0x0c,
-	0x42, 0x61, 0x73, 0x65, 0x55, 0x55, 0x49, 0x44, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03,
-	0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x4c,
-	0x0a, 0x0d, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x73, 0x70, 0x12,
-	0x1c, 0x0a, 0x09, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x09, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x12, 0x1d, 0x0a,
-	0x0a, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x5f, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x09, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x4b, 0x65, 0x79, 0x22, 0x17, 0x0a, 0x05,
-	0x49, 0x44, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x33, 0x0a, 0x0f, 0x42, 0x61, 0x73, 0x65, 0x49, 0x44, 0x49,
-	0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x33, 0x0a, 0x0f, 0x42, 0x61,
-	0x73, 0x65, 0x49, 0x44, 0x49, 0x6e, 0x74, 0x36, 0x34, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a,
+	0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x22, 0x19, 0x0a, 0x07, 0x55, 0x55, 0x49, 0x44, 0x52, 0x65,
+	0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69,
+	0x64, 0x22, 0x3e, 0x0a, 0x0b, 0x50, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71,
+	0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04,
+	0x70, 0x61, 0x67, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x73, 0x69, 0x7a,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x70, 0x61, 0x67, 0x65, 0x53, 0x69, 0x7a,
+	0x65, 0x22, 0x1a, 0x0a, 0x06, 0x49, 0x44, 0x73, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x69,
+	0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x04, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x1f, 0x0a,
+	0x0b, 0x49, 0x44, 0x73, 0x49, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03,
+	0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x05, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x33,
+	0x0a, 0x0f, 0x42, 0x61, 0x73, 0x65, 0x49, 0x44, 0x49, 0x6e, 0x74, 0x36, 0x34, 0x52, 0x65, 0x73,
+	0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69,
+	0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03,
+	0x6d, 0x73, 0x67, 0x22, 0x33, 0x0a, 0x0f, 0x42, 0x61, 0x73, 0x65, 0x49, 0x44, 0x49, 0x6e, 0x74,
+	0x33, 0x32, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x25, 0x0a, 0x0b, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x70, 0x65, 0x6e, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x70, 0x65, 0x6e, 0x69, 0x64, 0x22,
+	0x1d, 0x0a, 0x0b, 0x49, 0x44, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x0e,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x22, 0x34,
+	0x0a, 0x10, 0x42, 0x61, 0x73, 0x65, 0x49, 0x44, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65,
+	0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x6d, 0x73, 0x67, 0x22, 0x1c, 0x0a, 0x08, 0x42, 0x61, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d,
+	0x73, 0x67, 0x22, 0x07, 0x0a, 0x05, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x1c, 0x0a, 0x0a, 0x49,
+	0x44, 0x49, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x22, 0x30, 0x0a, 0x0c, 0x42, 0x61, 0x73,
+	0x65, 0x55, 0x55, 0x49, 0x44, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0xaf, 0x02, 0x0a, 0x11,
+	0x47, 0x65, 0x74, 0x53, 0x68, 0x61, 0x72, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x52, 0x65,
+	0x71, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x69, 0x6d, 0x61, 0x67, 0x65,
+	0x5f, 0x70, 0x61, 0x74, 0x68, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x69, 0x6d, 0x61,
+	0x67, 0x65, 0x50, 0x61, 0x74, 0x68, 0x12, 0x26, 0x0a, 0x0f, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x5f,
+	0x6c, 0x69, 0x73, 0x74, 0x5f, 0x70, 0x61, 0x74, 0x68, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0d, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x61, 0x74, 0x68, 0x12, 0x1d,
+	0x0a, 0x0a, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x5f, 0x70, 0x61, 0x74, 0x68, 0x18, 0x09, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x50, 0x61, 0x74, 0x68, 0x12, 0x21, 0x0a,
+	0x0c, 0x68, 0x61, 0x73, 0x68, 0x74, 0x61, 0x67, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0b, 0x68, 0x61, 0x73, 0x68, 0x74, 0x61, 0x67, 0x4c, 0x69, 0x73, 0x74,
+	0x12, 0x24, 0x0a, 0x0e, 0x6d, 0x69, 0x63, 0x72, 0x6f, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e,
+	0x66, 0x6f, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x6d, 0x69, 0x63, 0x72, 0x6f, 0x41,
+	0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x28, 0x0a, 0x10, 0x73, 0x68, 0x61, 0x72, 0x65, 0x5f,
+	0x74, 0x6f, 0x5f, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0e, 0x73, 0x68, 0x61, 0x72, 0x65, 0x54, 0x6f, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68,
+	0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x15, 0x0a, 0x06, 0x70, 0x6f, 0x69, 0x5f, 0x69, 0x64,
+	0x18, 0x0e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x70, 0x6f, 0x69, 0x49, 0x64, 0x22, 0x24, 0x0a,
+	0x0e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x71, 0x12,
+	0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x63,
+	0x6f, 0x64, 0x65, 0x22, 0xfa, 0x01, 0x0a, 0x08, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f,
+	0x12, 0x16, 0x0a, 0x06, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x69, 0x74, 0x79,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x63, 0x69, 0x74, 0x79, 0x12, 0x18, 0x0a, 0x07,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x24, 0x0a, 0x0e, 0x65, 0x5f, 0x61, 0x63, 0x63, 0x6f,
+	0x75, 0x6e, 0x74, 0x5f, 0x72, 0x6f, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c,
+	0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x16, 0x0a, 0x06,
+	0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x67, 0x65,
+	0x6e, 0x64, 0x65, 0x72, 0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x69, 0x63, 0x6b, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x69, 0x63, 0x6b, 0x6e, 0x61, 0x6d, 0x65,
+	0x12, 0x17, 0x0a, 0x07, 0x6f, 0x70, 0x65, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x07, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x6f, 0x70, 0x65, 0x6e, 0x49, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f,
+	0x76, 0x69, 0x6e, 0x63, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x72, 0x6f,
+	0x76, 0x69, 0x6e, 0x63, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x75, 0x6e, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x75, 0x6e, 0x69, 0x6f, 0x6e, 0x49, 0x64,
+	0x22, 0x3d, 0x0a, 0x0c, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70,
+	0x12, 0x2d, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x55, 0x73, 0x65,
+	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x2e, 0x0a, 0x0a, 0x42, 0x61, 0x73, 0x65, 0x49, 0x44, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a,
 	0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22,
-	0x19, 0x0a, 0x07, 0x55, 0x55, 0x49, 0x44, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x1a, 0x0a, 0x06, 0x49, 0x44,
-	0x73, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
-	0x04, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x1f, 0x0a, 0x0b, 0x49, 0x44, 0x73, 0x49, 0x6e, 0x74,
-	0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03,
-	0x28, 0x05, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x1f, 0x0a, 0x0b, 0x49, 0x44, 0x73, 0x49, 0x6e,
-	0x74, 0x36, 0x34, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20,
-	0x03, 0x28, 0x03, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x1c, 0x0a, 0x08, 0x55, 0x55, 0x49, 0x44,
-	0x73, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
-	0x09, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x3e, 0x0a, 0x0b, 0x50, 0x61, 0x67, 0x65, 0x49, 0x6e,
-	0x66, 0x6f, 0x52, 0x65, 0x71, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x04, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x70, 0x61, 0x67,
-	0x65, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x70, 0x61,
-	0x67, 0x65, 0x53, 0x69, 0x7a, 0x65, 0x22, 0x20, 0x0a, 0x0c, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74,
-	0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x34, 0x0a, 0x0f, 0x41, 0x63, 0x63, 0x65,
-	0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x12, 0x21, 0x0a, 0x0c, 0x61,
-	0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x1c,
-	0x0a, 0x0a, 0x49, 0x44, 0x49, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x22, 0x1c, 0x0a, 0x0a,
-	0x49, 0x44, 0x49, 0x6e, 0x74, 0x36, 0x34, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x1d, 0x0a, 0x0b, 0x49, 0x44,
-	0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x22, 0x20, 0x0a, 0x0c, 0x49, 0x44, 0x73,
-	0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x69, 0x64, 0x73,
-	0x18, 0x01, 0x20, 0x03, 0x28, 0x0d, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0x1c, 0x0a, 0x08, 0x42,
-	0x61, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x24, 0x0a, 0x0e, 0x41, 0x63, 0x63,
-	0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x71, 0x12, 0x12, 0x0a, 0x04, 0x63,
-	0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x22,
-	0x07, 0x0a, 0x05, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x2e, 0x0a, 0x0a, 0x42, 0x61, 0x73, 0x65,
-	0x49, 0x44, 0x52, 0x65, 0x73, 0x70, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x32, 0xb9, 0x01, 0x0a, 0x06, 0x44, 0x6f, 0x75,
-	0x79, 0x69, 0x6e, 0x12, 0x2f, 0x0a, 0x0c, 0x69, 0x6e, 0x69, 0x74, 0x44, 0x61, 0x74, 0x61, 0x62,
-	0x61, 0x73, 0x65, 0x12, 0x0d, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x45, 0x6d, 0x70,
-	0x74, 0x79, 0x1a, 0x10, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x42, 0x61, 0x73, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x12, 0x3b, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x53, 0x69, 0x67, 0x6e, 0x61,
-	0x74, 0x75, 0x72, 0x65, 0x12, 0x14, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x53, 0x69,
-	0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x15, 0x2e, 0x64, 0x6f, 0x75,
-	0x79, 0x69, 0x6e, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x12, 0x41, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f,
-	0x6b, 0x65, 0x6e, 0x12, 0x16, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x41, 0x63, 0x63,
-	0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x71, 0x1a, 0x17, 0x2e, 0x64, 0x6f,
+	0x20, 0x0a, 0x0c, 0x49, 0x44, 0x73, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x52, 0x65, 0x71, 0x12,
+	0x10, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0d, 0x52, 0x03, 0x69, 0x64,
+	0x73, 0x22, 0x1c, 0x0a, 0x0a, 0x49, 0x44, 0x49, 0x6e, 0x74, 0x36, 0x34, 0x52, 0x65, 0x71, 0x12,
+	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
+	0x1f, 0x0a, 0x0b, 0x49, 0x44, 0x73, 0x49, 0x6e, 0x74, 0x36, 0x34, 0x52, 0x65, 0x71, 0x12, 0x10,
+	0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x03, 0x52, 0x03, 0x69, 0x64, 0x73,
+	0x22, 0x87, 0x01, 0x0a, 0x0d, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x12, 0x1c, 0x0a, 0x09, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65,
+	0x12, 0x1d, 0x0a, 0x0a, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x5f, 0x6b, 0x65, 0x79, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x4b, 0x65, 0x79, 0x12,
+	0x1b, 0x0a, 0x09, 0x6e, 0x6f, 0x6e, 0x63, 0x65, 0x5f, 0x73, 0x74, 0x72, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x6e, 0x63, 0x65, 0x53, 0x74, 0x72, 0x12, 0x1c, 0x0a, 0x09,
+	0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x09, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x22, 0x17, 0x0a, 0x05, 0x49, 0x44,
+	0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
+	0x02, 0x69, 0x64, 0x22, 0x1c, 0x0a, 0x08, 0x55, 0x55, 0x49, 0x44, 0x73, 0x52, 0x65, 0x71, 0x12,
+	0x10, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x03, 0x69, 0x64,
+	0x73, 0x22, 0x2c, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x53, 0x68, 0x61, 0x72, 0x65, 0x53, 0x63, 0x68,
+	0x65, 0x6d, 0x61, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d,
+	0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x22,
+	0x20, 0x0a, 0x0c, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x12,
+	0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72,
+	0x6c, 0x22, 0x34, 0x0a, 0x0f, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74,
+	0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65,
+	0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x32, 0xbc, 0x02, 0x0a, 0x06, 0x44, 0x6f, 0x75, 0x79,
+	0x69, 0x6e, 0x12, 0x2f, 0x0a, 0x0c, 0x69, 0x6e, 0x69, 0x74, 0x44, 0x61, 0x74, 0x61, 0x62, 0x61,
+	0x73, 0x65, 0x12, 0x0d, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x45, 0x6d, 0x70, 0x74,
+	0x79, 0x1a, 0x10, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x42, 0x61, 0x73, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x12, 0x3b, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74,
+	0x75, 0x72, 0x65, 0x12, 0x14, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x53, 0x69, 0x67,
+	0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x15, 0x2e, 0x64, 0x6f, 0x75, 0x79,
+	0x69, 0x6e, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x12, 0x47, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x68, 0x61, 0x72, 0x65, 0x53, 0x63, 0x68, 0x65,
+	0x6d, 0x61, 0x12, 0x19, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x53,
+	0x68, 0x61, 0x72, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x52, 0x65, 0x71, 0x1a, 0x1a, 0x2e,
+	0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x68, 0x61, 0x72, 0x65, 0x53,
+	0x63, 0x68, 0x65, 0x6d, 0x61, 0x52, 0x65, 0x73, 0x70, 0x12, 0x41, 0x0a, 0x0e, 0x47, 0x65, 0x74,
+	0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x16, 0x2e, 0x64, 0x6f,
 	0x75, 0x79, 0x69, 0x6e, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e,
-	0x52, 0x65, 0x73, 0x70, 0x42, 0x0a, 0x5a, 0x08, 0x2e, 0x2f, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x71, 0x1a, 0x17, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x41, 0x63, 0x63,
+	0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x12, 0x38, 0x0a, 0x0b,
+	0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x13, 0x2e, 0x64, 0x6f,
+	0x75, 0x79, 0x69, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71,
+	0x1a, 0x14, 0x2e, 0x64, 0x6f, 0x75, 0x79, 0x69, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e,
+	0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x42, 0x0a, 0x5a, 0x08, 0x2e, 0x2f, 0x64, 0x6f, 0x75, 0x79,
+	0x69, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1188,43 +1623,53 @@ func file_douyin_proto_rawDescGZIP() []byte {
 	return file_douyin_proto_rawDescData
 }
 
-var file_douyin_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_douyin_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
 var file_douyin_proto_goTypes = []interface{}{
-	(*BaseIDUint32Resp)(nil), // 0: douyin.BaseIDUint32Resp
-	(*BaseUUIDResp)(nil),     // 1: douyin.BaseUUIDResp
-	(*SignatureResp)(nil),    // 2: douyin.SignatureResp
-	(*IDReq)(nil),            // 3: douyin.IDReq
-	(*BaseIDInt32Resp)(nil),  // 4: douyin.BaseIDInt32Resp
-	(*BaseIDInt64Resp)(nil),  // 5: douyin.BaseIDInt64Resp
-	(*UUIDReq)(nil),          // 6: douyin.UUIDReq
-	(*IDsReq)(nil),           // 7: douyin.IDsReq
-	(*IDsInt32Req)(nil),      // 8: douyin.IDsInt32Req
-	(*IDsInt64Req)(nil),      // 9: douyin.IDsInt64Req
-	(*UUIDsReq)(nil),         // 10: douyin.UUIDsReq
-	(*PageInfoReq)(nil),      // 11: douyin.PageInfoReq
-	(*SignatureReq)(nil),     // 12: douyin.SignatureReq
-	(*AccessTokenResp)(nil),  // 13: douyin.AccessTokenResp
-	(*IDInt32Req)(nil),       // 14: douyin.IDInt32Req
-	(*IDInt64Req)(nil),       // 15: douyin.IDInt64Req
-	(*IDUint32Req)(nil),      // 16: douyin.IDUint32Req
-	(*IDsUint32Req)(nil),     // 17: douyin.IDsUint32Req
-	(*BaseResp)(nil),         // 18: douyin.BaseResp
-	(*AccessTokenReq)(nil),   // 19: douyin.AccessTokenReq
-	(*Empty)(nil),            // 20: douyin.Empty
-	(*BaseIDResp)(nil),       // 21: douyin.BaseIDResp
+	(*UUIDReq)(nil),            // 0: douyin.UUIDReq
+	(*PageInfoReq)(nil),        // 1: douyin.PageInfoReq
+	(*IDsReq)(nil),             // 2: douyin.IDsReq
+	(*IDsInt32Req)(nil),        // 3: douyin.IDsInt32Req
+	(*BaseIDInt64Resp)(nil),    // 4: douyin.BaseIDInt64Resp
+	(*BaseIDInt32Resp)(nil),    // 5: douyin.BaseIDInt32Resp
+	(*UserInfoReq)(nil),        // 6: douyin.UserInfoReq
+	(*IDUint32Req)(nil),        // 7: douyin.IDUint32Req
+	(*BaseIDUint32Resp)(nil),   // 8: douyin.BaseIDUint32Resp
+	(*BaseResp)(nil),           // 9: douyin.BaseResp
+	(*Empty)(nil),              // 10: douyin.Empty
+	(*IDInt32Req)(nil),         // 11: douyin.IDInt32Req
+	(*BaseUUIDResp)(nil),       // 12: douyin.BaseUUIDResp
+	(*GetShareSchemaReq)(nil),  // 13: douyin.GetShareSchemaReq
+	(*AccessTokenReq)(nil),     // 14: douyin.AccessTokenReq
+	(*UserInfo)(nil),           // 15: douyin.UserInfo
+	(*UserInfoResp)(nil),       // 16: douyin.UserInfoResp
+	(*BaseIDResp)(nil),         // 17: douyin.BaseIDResp
+	(*IDsUint32Req)(nil),       // 18: douyin.IDsUint32Req
+	(*IDInt64Req)(nil),         // 19: douyin.IDInt64Req
+	(*IDsInt64Req)(nil),        // 20: douyin.IDsInt64Req
+	(*SignatureResp)(nil),      // 21: douyin.SignatureResp
+	(*IDReq)(nil),              // 22: douyin.IDReq
+	(*UUIDsReq)(nil),           // 23: douyin.UUIDsReq
+	(*GetShareSchemaResp)(nil), // 24: douyin.GetShareSchemaResp
+	(*SignatureReq)(nil),       // 25: douyin.SignatureReq
+	(*AccessTokenResp)(nil),    // 26: douyin.AccessTokenResp
 }
 var file_douyin_proto_depIdxs = []int32{
-	20, // 0: douyin.Douyin.initDatabase:input_type -> douyin.Empty
-	12, // 1: douyin.Douyin.GetSignature:input_type -> douyin.SignatureReq
-	19, // 2: douyin.Douyin.GetAccessToken:input_type -> douyin.AccessTokenReq
-	18, // 3: douyin.Douyin.initDatabase:output_type -> douyin.BaseResp
-	2,  // 4: douyin.Douyin.GetSignature:output_type -> douyin.SignatureResp
-	13, // 5: douyin.Douyin.GetAccessToken:output_type -> douyin.AccessTokenResp
-	3,  // [3:6] is the sub-list for method output_type
-	0,  // [0:3] is the sub-list for method input_type
-	0,  // [0:0] is the sub-list for extension type_name
-	0,  // [0:0] is the sub-list for extension extendee
-	0,  // [0:0] is the sub-list for field type_name
+	15, // 0: douyin.UserInfoResp.user_info:type_name -> douyin.UserInfo
+	10, // 1: douyin.Douyin.initDatabase:input_type -> douyin.Empty
+	25, // 2: douyin.Douyin.GetSignature:input_type -> douyin.SignatureReq
+	13, // 3: douyin.Douyin.GetShareSchema:input_type -> douyin.GetShareSchemaReq
+	14, // 4: douyin.Douyin.GetAccessToken:input_type -> douyin.AccessTokenReq
+	6,  // 5: douyin.Douyin.GetUserInfo:input_type -> douyin.UserInfoReq
+	9,  // 6: douyin.Douyin.initDatabase:output_type -> douyin.BaseResp
+	21, // 7: douyin.Douyin.GetSignature:output_type -> douyin.SignatureResp
+	24, // 8: douyin.Douyin.GetShareSchema:output_type -> douyin.GetShareSchemaResp
+	26, // 9: douyin.Douyin.GetAccessToken:output_type -> douyin.AccessTokenResp
+	16, // 10: douyin.Douyin.GetUserInfo:output_type -> douyin.UserInfoResp
+	6,  // [6:11] is the sub-list for method output_type
+	1,  // [1:6] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_douyin_proto_init() }
@@ -1234,78 +1679,6 @@ func file_douyin_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_douyin_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BaseIDUint32Resp); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BaseUUIDResp); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SignatureResp); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDReq); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BaseIDInt32Resp); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BaseIDInt64Resp); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UUIDReq); i {
 			case 0:
 				return &v.state
@@ -1317,55 +1690,7 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDsReq); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDsInt32Req); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDsInt64Req); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UUIDsReq); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_douyin_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PageInfoReq); i {
 			case 0:
 				return &v.state
@@ -1377,8 +1702,8 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SignatureReq); i {
+		file_douyin_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDsReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1389,8 +1714,8 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AccessTokenResp); i {
+		file_douyin_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDsInt32Req); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1401,8 +1726,8 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDInt32Req); i {
+		file_douyin_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*BaseIDInt64Resp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1413,8 +1738,8 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDInt64Req); i {
+		file_douyin_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*BaseIDInt32Resp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1425,7 +1750,19 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_douyin_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserInfoReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*IDUint32Req); i {
 			case 0:
 				return &v.state
@@ -1437,8 +1774,8 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IDsUint32Req); i {
+		file_douyin_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*BaseIDUint32Resp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1449,7 +1786,7 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_douyin_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BaseResp); i {
 			case 0:
 				return &v.state
@@ -1461,19 +1798,7 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AccessTokenReq); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_douyin_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_douyin_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Empty); i {
 			case 0:
 				return &v.state
@@ -1485,8 +1810,188 @@ func file_douyin_proto_init() {
 				return nil
 			}
 		}
-		file_douyin_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_douyin_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDInt32Req); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*BaseUUIDResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetShareSchemaReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AccessTokenReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserInfoResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BaseIDResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDsUint32Req); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDInt64Req); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDsInt64Req); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SignatureResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UUIDsReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetShareSchemaResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SignatureReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_douyin_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AccessTokenResp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1504,7 +2009,7 @@ func file_douyin_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_douyin_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   22,
+			NumMessages:   27,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

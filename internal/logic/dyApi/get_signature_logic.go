@@ -45,18 +45,21 @@ func (l *GetSignatureLogic) GetSignature(in *douyin.SignatureReq) (*douyin.Signa
 		l.svcCtx.Config.DouYinConf.ClientKey, "douyin_ticket", dyCache)
 	jsTicket, err := douYinJSTicketHandler.GetTicket(clientToken)
 
+	sign, nonceStr, timestamp := l.Sign(jsTicket, in.Url)
 	return &douyin.SignatureResp{
-		Signature: l.sign(jsTicket, in.Url),
+		Signature: sign,
+		NonceStr:  nonceStr,
+		Timestamp: timestamp,
 		ClientKey: l.svcCtx.Config.DouYinConf.ClientKey,
 	}, nil
 }
 
-func (l *GetSignatureLogic) sign(jsapiTicket string, url string) string {
-	nonceStr := util.GenRandomString(16)
-	timestamp := time.Now().Unix()
+func (l *GetSignatureLogic) Sign(jsapiTicket string, url string) (sign string, nonceStr string, timestamp int64) {
+	nonceStr = util.GenRandomString(16)
+	timestamp = time.Now().Unix()
 	// 对所有待签名参数按照字段名的 ASCII 码从小到大排序（字典序）后，使用 URL 键值对的格式（即 key1=value1&key2=value2…）拼接成字符串 string1
 	string1 := "jsapi_ticket=" + jsapiTicket + "&noncestr=" + nonceStr + "&timestamp=" + strconv.FormatInt(timestamp, 10) + "&url=" + url
 	// 对 string1 进行 MD5 签名，得到 signature
 	hash := md5.Sum([]byte(string1))
-	return hex.EncodeToString(hash[:])
+	return hex.EncodeToString(hash[:]), nonceStr, timestamp
 }

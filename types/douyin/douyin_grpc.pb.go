@@ -28,8 +28,14 @@ type DouyinClient interface {
 	// 用于获取JSSDK调起半屏授权页方法需要的签名
 	GetSignature(ctx context.Context, in *SignatureReq, opts ...grpc.CallOption) (*SignatureResp, error)
 	// group: dyApi
+	// 用于获取 分享Schema
+	GetShareSchema(ctx context.Context, in *GetShareSchemaReq, opts ...grpc.CallOption) (*GetShareSchemaResp, error)
+	// group: dyApi
 	// 获取抖音AccessToken
 	GetAccessToken(ctx context.Context, in *AccessTokenReq, opts ...grpc.CallOption) (*AccessTokenResp, error)
+	// group: dyApi
+	// 获取抖音用户信息
+	GetUserInfo(ctx context.Context, in *UserInfoReq, opts ...grpc.CallOption) (*UserInfoResp, error)
 }
 
 type douyinClient struct {
@@ -58,9 +64,27 @@ func (c *douyinClient) GetSignature(ctx context.Context, in *SignatureReq, opts 
 	return out, nil
 }
 
+func (c *douyinClient) GetShareSchema(ctx context.Context, in *GetShareSchemaReq, opts ...grpc.CallOption) (*GetShareSchemaResp, error) {
+	out := new(GetShareSchemaResp)
+	err := c.cc.Invoke(ctx, "/douyin.Douyin/GetShareSchema", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *douyinClient) GetAccessToken(ctx context.Context, in *AccessTokenReq, opts ...grpc.CallOption) (*AccessTokenResp, error) {
 	out := new(AccessTokenResp)
 	err := c.cc.Invoke(ctx, "/douyin.Douyin/GetAccessToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *douyinClient) GetUserInfo(ctx context.Context, in *UserInfoReq, opts ...grpc.CallOption) (*UserInfoResp, error) {
+	out := new(UserInfoResp)
+	err := c.cc.Invoke(ctx, "/douyin.Douyin/GetUserInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,8 +101,14 @@ type DouyinServer interface {
 	// 用于获取JSSDK调起半屏授权页方法需要的签名
 	GetSignature(context.Context, *SignatureReq) (*SignatureResp, error)
 	// group: dyApi
+	// 用于获取 分享Schema
+	GetShareSchema(context.Context, *GetShareSchemaReq) (*GetShareSchemaResp, error)
+	// group: dyApi
 	// 获取抖音AccessToken
 	GetAccessToken(context.Context, *AccessTokenReq) (*AccessTokenResp, error)
+	// group: dyApi
+	// 获取抖音用户信息
+	GetUserInfo(context.Context, *UserInfoReq) (*UserInfoResp, error)
 	mustEmbedUnimplementedDouyinServer()
 }
 
@@ -92,8 +122,14 @@ func (UnimplementedDouyinServer) InitDatabase(context.Context, *Empty) (*BaseRes
 func (UnimplementedDouyinServer) GetSignature(context.Context, *SignatureReq) (*SignatureResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSignature not implemented")
 }
+func (UnimplementedDouyinServer) GetShareSchema(context.Context, *GetShareSchemaReq) (*GetShareSchemaResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetShareSchema not implemented")
+}
 func (UnimplementedDouyinServer) GetAccessToken(context.Context, *AccessTokenReq) (*AccessTokenResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccessToken not implemented")
+}
+func (UnimplementedDouyinServer) GetUserInfo(context.Context, *UserInfoReq) (*UserInfoResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
 }
 func (UnimplementedDouyinServer) mustEmbedUnimplementedDouyinServer() {}
 
@@ -144,6 +180,24 @@ func _Douyin_GetSignature_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Douyin_GetShareSchema_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetShareSchemaReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DouyinServer).GetShareSchema(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/douyin.Douyin/GetShareSchema",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DouyinServer).GetShareSchema(ctx, req.(*GetShareSchemaReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Douyin_GetAccessToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AccessTokenReq)
 	if err := dec(in); err != nil {
@@ -158,6 +212,24 @@ func _Douyin_GetAccessToken_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DouyinServer).GetAccessToken(ctx, req.(*AccessTokenReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Douyin_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserInfoReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DouyinServer).GetUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/douyin.Douyin/GetUserInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DouyinServer).GetUserInfo(ctx, req.(*UserInfoReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -178,8 +250,16 @@ var Douyin_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Douyin_GetSignature_Handler,
 		},
 		{
+			MethodName: "GetShareSchema",
+			Handler:    _Douyin_GetShareSchema_Handler,
+		},
+		{
 			MethodName: "GetAccessToken",
 			Handler:    _Douyin_GetAccessToken_Handler,
+		},
+		{
+			MethodName: "GetUserInfo",
+			Handler:    _Douyin_GetUserInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
