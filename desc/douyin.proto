@@ -7,7 +7,7 @@ option go_package="./douyin";
 message Empty {}
 
 message SignatureReq {
-  string url = 1;
+  optional string url = 1;
 }
 
 message SignatureResp {

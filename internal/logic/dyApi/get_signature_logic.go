@@ -54,11 +54,14 @@ func (l *GetSignatureLogic) GetSignature(in *douyin.SignatureReq) (*douyin.Signa
 	}, nil
 }
 
-func (l *GetSignatureLogic) Sign(jsapiTicket string, url string) (sign string, nonceStr string, timestamp int64) {
+func (l *GetSignatureLogic) Sign(jsapiTicket string, url *string) (sign string, nonceStr string, timestamp int64) {
 	nonceStr = util.GenRandomString(16)
 	timestamp = time.Now().Unix()
 	// 对所有待签名参数按照字段名的 ASCII 码从小到大排序（字典序）后，使用 URL 键值对的格式（即 key1=value1&key2=value2…）拼接成字符串 string1
-	string1 := "jsapi_ticket=" + jsapiTicket + "&noncestr=" + nonceStr + "&timestamp=" + strconv.FormatInt(timestamp, 10) + "&url=" + url
+	string1 := "jsapi_ticket=" + jsapiTicket + "&noncestr=" + nonceStr + "&timestamp=" + strconv.FormatInt(timestamp, 10)
+	if url != nil {
+		string1 += "&url=" + *url
+	}
 	// 对 string1 进行 MD5 签名，得到 signature
 	hash := md5.Sum([]byte(string1))
 	return hex.EncodeToString(hash[:]), nonceStr, timestamp
