@@ -5,6 +5,7 @@ go 1.22.1
 require (
 	entgo.io/ent v0.13.1
 	github.com/redis/go-redis/v9 v9.5.1
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/suyuan32/simple-admin-common v1.3.12
 	github.com/zeromicro/go-zero v1.6.3
 	google.golang.org/grpc v1.63.2

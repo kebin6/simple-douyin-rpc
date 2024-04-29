@@ -29,6 +29,32 @@ func HTTPGet(uri string) ([]byte, error) {
 	return contents, nil
 }
 
+func HTTPHeaderGet(uri string, headers map[string]string) ([]byte, error) {
+	client := &http.Client{}
+	request, err := http.NewRequest("GET", uri, nil)
+	if err != nil {
+		return nil, NewCodeHttpError(err.Error())
+	}
+
+	request.Header.Set("Accept", "application/json")
+	for key, value := range headers {
+		request.Header.Set(key, value)
+	}
+
+	response, err := client.Do(request)
+	if err != nil {
+		return nil, NewCodeHttpError(err.Error())
+	}
+
+	defer response.Body.Close()
+	contents, err := io.ReadAll(response.Body)
+	if err != nil {
+		return nil, NewCodeHttpError("failed to read response body: %s", err.Error())
+	}
+
+	return contents, nil
+}
+
 // HTTPPost post 请求
 func HTTPPost(uri string, data string) ([]byte, error) {
 	body := bytes.NewBuffer([]byte(data))

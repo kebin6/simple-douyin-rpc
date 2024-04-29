@@ -61,7 +61,8 @@ func (js *DefaultJsTicket) GetTicket(accessToken string) (ticketStr string, err 
 		return
 	}
 	expires := ticket.ExpiresIn - 1500
-	err = js.cache.Set(jsAPITicketCacheKey, ticket.Ticket, time.Duration(expires)*time.Second)
+	_ = js.cache.Set(jsAPITicketCacheKey, ticket.Ticket, time.Duration(expires)*time.Second)
+
 	ticketStr = ticket.Ticket
 	return
 }

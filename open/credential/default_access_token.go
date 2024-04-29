@@ -15,7 +15,7 @@ const (
 	renewRefreshTokenURL = "https://open.douyin.com/oauth/renew_refresh_token?client_key=%s&refresh_token=%s"
 	clientTokenURL       = "https://open.douyin.com/oauth/client_token?client_key=%s&client_secret=%s&grant_type=client_credential"
 	// CacheKeyPrefix 抖音open cache key前缀
-	CacheKeyPrefix = "douyin_open"
+	CacheKeyPrefix = "douyin"
 )
 
 // DefaultAccessToken 默认AccessToken 获取
@@ -95,18 +95,12 @@ func (ak *DefaultAccessToken) SetAccessToken(accessToken *AccessToken) (err erro
 	// access token cache
 	accessTokenCacheKey := fmt.Sprintf("%s_access_token_%s", ak.cacheKeyPrefix, accessToken.OpenID)
 	expires := accessToken.ExpiresIn - 1500
-	err = ak.cache.Set(accessTokenCacheKey, accessToken.AccessToken, time.Duration(expires)*time.Second)
-	if err != nil {
-		return
-	}
+	_ = ak.cache.Set(accessTokenCacheKey, accessToken.AccessToken, time.Duration(expires)*time.Second)
 
 	// refresh access token cache
 	refreshAccessTokenCacheKey := fmt.Sprintf("%s_refresh_token_%s", ak.cacheKeyPrefix, accessToken.OpenID)
 	refreshTokenExpires := accessToken.RefreshTokenIn - 1500
-	err = ak.cache.Set(refreshAccessTokenCacheKey, accessToken.RefreshToken, time.Duration(refreshTokenExpires)*time.Second)
-	if err != nil {
-		return
-	}
+	_ = ak.cache.Set(refreshAccessTokenCacheKey, accessToken.RefreshToken, time.Duration(refreshTokenExpires)*time.Second)
 
 	return
 }
@@ -199,6 +193,15 @@ type clientTokenRes struct {
 
 // GetClientToken 该接口用于获取接口调用的凭证client_access_token，主要用于调用不需要用户授权就可以调用的接口.
 func (ak *DefaultAccessToken) GetClientToken() (clientToken *ClientToken, err error) {
+
+	clientTokenCacheKey := fmt.Sprintf("%s_client_token_%s", ak.cacheKeyPrefix, ak.ClientKey)
+	val := ak.cache.Get(clientTokenCacheKey)
+	if val != nil {
+		clientToken = &ClientToken{}
+		clientToken.AccessToken = val.(string)
+		return
+	}
+
 	uri := fmt.Sprintf(clientTokenURL, ak.ClientKey, ak.ClientSecret)
 	var response []byte
 	response, err = util.HTTPGet(uri)
@@ -215,6 +218,10 @@ func (ak *DefaultAccessToken) GetClientToken() (clientToken *ClientToken, err er
 		err = util.NewCodeDouYinError("GetClientToken", result.Data.DYError, nil)
 		return
 	}
+
+	expires := result.Data.ExpiresIn - 1500
+	_ = ak.cache.Set(clientTokenCacheKey, result.Data.AccessToken, time.Duration(expires)*time.Second)
+
 	clientToken = &result.Data
 	return
 }

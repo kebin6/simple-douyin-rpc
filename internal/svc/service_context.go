@@ -5,6 +5,7 @@ import (
 	"github.com/kebin6/simple-douyin-rpc/ent"
 	_ "github.com/kebin6/simple-douyin-rpc/ent/runtime"
 	"github.com/kebin6/simple-douyin-rpc/internal/config"
+	"github.com/kebin6/simple-douyin-rpc/open/util"
 	"time"
 
 	"github.com/redis/go-redis/v9"
@@ -46,7 +47,7 @@ func (r *RedisCache) Get(key string) interface{} {
 
 func (r *RedisCache) Set(key string, val interface{}, timeout time.Duration) error {
 	_, err := r.Redis.Set(r.Ctx, key, val, timeout).Result()
-	return err
+	return util.NewCodeInternalError("redis set error: %s, key: %s, val: %s, timeout: %d", err.Error(), key, val, timeout)
 }
 
 func (r *RedisCache) IsExist(key string) bool {

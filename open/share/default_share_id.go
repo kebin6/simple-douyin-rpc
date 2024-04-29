@@ -48,7 +48,7 @@ func (share *DefaultShareId) GetShareId() (shareIdStr string, err error) {
 
 	var response []byte
 	url := fmt.Sprintf(getShareIdURL, share.ClientToken)
-	response, err = util.HTTPGet(url)
+	response, err = util.HTTPHeaderGet(url, map[string]string{"access-token": share.ClientToken})
 	if err != nil {
 		return
 	}

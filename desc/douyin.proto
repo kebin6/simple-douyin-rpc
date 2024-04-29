@@ -18,19 +18,19 @@ message SignatureResp {
 }
 
 message GetShareSchemaReq {
-  string state = 6;
-  string image_path = 7;
-  string image_list_path = 8;
-  string video_path = 9;
-  string hashtag_list = 10;
-  string micro_app_info = 11;
-  string share_to_publish = 12;
+  optional string image_path = 7;
+  repeated string image_list_path = 8;
+  optional string video_path = 9;
+  repeated string hashtag_list = 10;
+  optional string micro_app_info = 11;
+  bool share_to_publish = 12;
   string title = 13;
-  string poi_id = 14;
+  optional string poi_id = 14;
 }
 
 message GetShareSchemaResp {
   string schema = 1;
+  string share_id = 2;
 }
 
 message AccessTokenReq {
